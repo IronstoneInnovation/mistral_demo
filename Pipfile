@@ -7,6 +7,9 @@ name = "pypi"
 streamlit = "*"
 ollama = "*"
 watchdog = "*"
+langchain-ollama = "*"
+langchain-community = ">=0.2.11"
+tavily-python = "*"
 
 [dev-packages]
 
