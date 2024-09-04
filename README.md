@@ -29,7 +29,6 @@ That's it!
 ```bash
 $ ollama serve
 ```
-"""
 
 2. Open a new Terminal and start the streamlit server to serve the demo apps:
 
