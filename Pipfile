@@ -10,6 +10,7 @@ watchdog = "*"
 langchain-ollama = "*"
 langchain-community = ">=0.2.11"
 tavily-python = "*"
+transformers = "*"
 
 [dev-packages]
 
