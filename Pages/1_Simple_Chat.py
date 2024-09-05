@@ -5,7 +5,16 @@ import ollama
 st.image("dark-branding.png")
 st.title("Simple Chat")
 st.write(
-    "This is a simple chatbot that talks to a locally-hosted Mistral model.  It does not send data over the internet, nor does it store data, refer to local or external files and databases."
+    "This is a simple chatbot that talks to a locally-hosted model.  It does not send data over the internet, nor does it store data or refer to local or external files and databases."
+)
+
+# Select model
+model_name = st.selectbox(
+    "Select a model:",
+    (
+        "mistral",
+        "llama3.1:8b",
+    ),
 )
 
 # Initialize chat history
@@ -21,6 +30,8 @@ for message in st.session_state.messages:
 if prompt := st.chat_input("What's on your mind?"):
 
     # Display user message in chat message container
+    # (Note that we would normally need to be more careful about formatting prompts
+    # particularly with llama3 but for this demo it's better to keep things simple.)
     st.chat_message("user").markdown(prompt)
 
     # Add user message to chat history
@@ -28,7 +39,7 @@ if prompt := st.chat_input("What's on your mind?"):
 
     # Get response from model
     response = ollama.chat(
-        model="mistral",
+        model=model_name,
         messages=st.session_state.messages,
     )
 

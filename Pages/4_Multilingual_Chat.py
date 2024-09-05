@@ -29,7 +29,16 @@ st.write(
     "Under the hood it uses LangChain to manage the prompting, chat history and responses to and from the model, which is still hosted locally."
 )
 st.write(
-    "As always, it does not send data over the internet, nor does it store data, refer to local or external files and databases...but one of the language options is NSFW so be careful!"
+    "As always, it does not send data over the internet, nor does it store data or refer to local or external files and databases...but one of the language options is NSFW so be careful!"
+)
+
+# Select model
+model_name = st.selectbox(
+    "Select a model:",
+    (
+        "mistral",
+        "llama3.1:8b",
+    ),
 )
 
 # Select assistant language
@@ -60,7 +69,7 @@ def get_session_history(session_id: str) -> BaseChatMessageHistory:
     return st.session_state.store[session_id]
 
 
-model = ChatOllama(model="mistral")
+model = ChatOllama(model=model_name)
 
 trimmer = trim_messages(
     max_tokens=8192,  # Current context window of Mistral-7B

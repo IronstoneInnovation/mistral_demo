@@ -1,6 +1,8 @@
 # Mistral Demo
 
-A collection of simple yet fully functional chatbot apps to demonstrate how easy it is to use a locally-hosted Mistral LLM.  The architecture is just a straightforward Streamlit app that uses an Ollama server running locally to host the LLM and handle the requests from the app.  And thanks to Streamlit the entire project is pure Python - no HTML, CSS or javascript to deal with!
+Not *only* Mistral!  It started with Mistral, and then it grew...
+
+A collection of simple yet fully functional chatbot apps to demonstrate how easy it is to use a locally-hosted LLMs.  The architecture is just a straightforward Streamlit app that uses an Ollama server running locally to host the LLM and handle the requests from the app.  And thanks to Streamlit the entire project is pure Python - no HTML, CSS or javascript to deal with!
 
 ## Setting up
 
@@ -14,17 +16,26 @@ $ cd mistral_demo
 $ pipenv install
 ```
 
-2. Install the Mistral-7B model on your computer:
+2. Start the Ollama server:
+
+```bash
+$ ollama serve
+```
+
+Leave this Terminal open otherwise the server will shut down.
+
+3. In a new Terminal install Mistral-7B and Llama 3.1:8B models on your computer:
 
 ```bash
 $ ollama pull mistral
+$ ollama pull llama3.1:8b
 ```
 
 That's it!
 
 ## Running the demo
 
-1. Start the local Ollama server.  This hosts the model in your computer's memory, enabling the demo apps to talk to it.  Open a Terminal and _leave it open when finished otherwise the server will terminate_:
+1. Start the local Ollama server if it's not already running.  This hosts the model in your computer's memory, enabling the demo apps to talk to it.  Open a Terminal and _leave it open when finished otherwise the server will terminate_:
 
 ```bash
 $ ollama serve
