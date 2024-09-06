@@ -2,6 +2,8 @@ import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_ollama.llms import OllamaLLM
 
+st.set_page_config(page_title="English-to-Polish Translator 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇵🇱")
+
 # Title and description/instructions
 st.image("dark-branding.png")
 st.title("English-to-Polish Translator 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇵🇱")

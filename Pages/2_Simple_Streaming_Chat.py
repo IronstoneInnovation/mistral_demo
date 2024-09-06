@@ -1,6 +1,8 @@
 import streamlit as st
 import ollama
 
+st.set_page_config(page_title="Simple Streaming Chat")
+
 # Title and description/instructions
 st.image("dark-branding.png")
 st.title("Simple Streaming Chat")

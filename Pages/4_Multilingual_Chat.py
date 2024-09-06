@@ -18,6 +18,7 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables import RunnablePassthrough
 
+st.set_page_config(page_title="Multilingual Chat")
 
 # Title and description/instructions
 st.image("dark-branding.png")
