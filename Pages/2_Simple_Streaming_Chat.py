@@ -16,10 +16,7 @@ st.write(
 # Select model
 model_name = st.selectbox(
     "Select a model:",
-    (
-        "mistral",
-        "llama3.1:8b",
-    ),
+    ("mistral", "llama3.1:8b", "llama3.2"),
 )
 
 
